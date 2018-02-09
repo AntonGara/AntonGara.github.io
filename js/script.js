@@ -33,12 +33,7 @@ window.onload = function() {
         item3.classList.add("slider__item--active");        
     }
     
-    //Видео
-
-
-
     //Счетчик
-
     var number1 = document.querySelector('.counter__number--1'),
         numberTop = number1.getBoundingClientRect().top,
         start = +number1.innerHTML, end = +number1.dataset.max;
