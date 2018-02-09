@@ -1,0 +1,55 @@
+.example {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color:  #fbfaf8;
+    text-align: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1230px;
+        margin-top: 90px;
+    }
+    &__title {
+        margin-bottom: 25px;   
+    }
+    &__description {
+        width: 60%;
+        margin-bottom: 40px;
+    }
+    &__image {
+        display: flex;
+        justify-content: center;
+        max-width: 90%;
+        position: relative;
+        
+    }
+    &__img {
+        margin-top: 82px;
+        background-size: cover;
+        width: 770px;
+        height: 482px;
+        &--1 {
+            background-image: url('image/browser-left.png');
+            position: absolute;
+            z-index: 25;
+            left: -240px;
+            height: 400px; 
+        } 
+        &--2 {    
+            position: relative;
+            background-image: url('image/browser-center.png');
+            margin: 0;
+            top: 0;
+            z-index: 55;
+        }
+        &--3 {
+            position: absolute;
+            background-image: url('image/browser-right.png');
+            z-index: 25;
+            right: -240px;
+            height: 400px;
+        }
+    }
+}

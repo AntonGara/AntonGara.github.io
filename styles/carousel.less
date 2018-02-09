@@ -1,0 +1,180 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__content {
+        display: flex;
+        width: 1200px;
+        height: 395px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        justify-content: space-between;
+    }  
+    &__item {
+        background-color:  #fbfaf8;
+        width: 370px;
+        height: 395px;
+        overflow: hidden;
+        &--pasive {
+            width: 0;
+            border: none;              
+        }
+        &--active-pasive {     
+            animation: active_pasive .5s ease-out forwards;
+        }
+        &--pasive-active {
+            animation: pasive_active 1s ease-in forwards; 
+        }
+        
+        &:hover {
+            background-color:  #362f2d;
+        }
+        &:hover .carousel__title {
+            color:  #c7b299;
+        }
+        &:hover .carousel__description {
+            color:  #ffffff;
+        }
+        &:hover .carousel__day {
+            background-color:  #c7b299;
+        }
+        &:hover .carousel__month {
+            background-color:  #a48d72;
+        }
+        &:hover .carousel__img {
+            transform: scale(1.1);
+            transition: .5s;
+        }
+    }
+    &__image {
+        position: relative;
+        width: 370px;
+        height: 220px;
+        padding: 20px;
+        overflow: hidden;
+    }
+    &__img {
+        position: absolute;
+        transition: 1s ease-out;
+        top: 0;
+        left: 0;
+    }
+    &__date {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background-color:  #363636;
+        width: 50px;
+        height: 35px;
+        font-family: Montserrat;
+        color:  #ffffff;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: center;
+    }
+    &__month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color:  #252525;
+        width: 50px;
+        height: 25px;
+        font-family: Roboto;
+        color:  #ffffff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+    &__text {
+        padding: 30px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: left;
+    }
+    &__description {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        text-align: left;
+        margin-top: 15px;
+    }
+    &__link {
+        font-family: Montserrat;
+        color:  #c7b299;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        margin-top: 20px;
+        &::after {
+            content: "";
+            background-image: url('image/link_arrow-hover.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 5px;
+            height: 8px;
+            margin-left: 9px;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+    }
+    &__btn {
+        bottom: 0;
+        width: 22px;
+        height: 22px;
+        &--prev {
+            margin-right: 8px;
+            background-image: url('image/carousel_prev.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover {
+                background-image: url('image/carousel_prev-hover.svg');
+            }
+            &-animated {
+                pointer-events: none;
+                animation: prev 1s linear;
+            }
+            &-disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+        &--next {
+            background-image: url('image/carousel_next.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover {
+                background-image: url('image/carousel_next-hover.svg');
+            }
+            &-animated {
+                pointer-events: none;
+                animation: next 1s linear;
+            }
+            &-disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+        
+
+    }
+}

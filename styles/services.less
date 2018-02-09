@@ -1,0 +1,82 @@
+.services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1180px;
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    &__item {
+        width: 290px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover .services__title {
+            color:  #c7b299;
+        }
+        &::after {
+            content: "";
+            background-color:  #f1eee9;
+            width: 70px;
+            height: 3px;
+            margin-top: 30px;
+        }
+        &--icon1::before {
+            content: "";
+            width: 49px;
+            height: 49px;
+            background-image: url('image/icon-1.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-bottom: 30px;
+            
+        }
+        &--icon2::before {
+            content: "";
+            width: 49px;
+            height: 49px;
+            background-image: url('image/icon-2.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-bottom: 30px;
+        }
+        &--icon3::before {
+            content: "";
+            width: 49px;
+            height: 49px;
+            background-image: url('image/icon-3.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-bottom: 30px;
+        }
+        &--icon4::before {
+            content: "";
+            width: 49px;
+            height: 49px;
+            background-image: url('image/icon-4.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-bottom: 30px;
+        }
+
+    }
+    &__title {
+        font-size: 22px;
+        padding-bottom: 20px;
+    }
+    &__description {
+        font-weight: 300;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,158 @@
+/* Смартфоны (портретный и альбомный режимы) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Сюда добавляем стили*/
+}
+ 
+/* Смартфоны (альбомный режим) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Сюда добавляем стили*/
+}
+ 
+/* Смартфоны (портретный режим) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Сюда добавляем стили*/
+}
+ 
+/* iPad (портретный и альбомный режимы) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Сюда добавляем стили*/
+}
+ 
+/* iPad (альбомный режим) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Сюда добавляем стили*/
+}
+ 
+/* iPad (портретный режим) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Сюда добавляем стили*/
+}
+ 
+/* Настольные компьютеры и ноутбуки ----------- */
+@media only screen
+and (max-width : 1280px) {
+    .header__content {
+        max-width: 600px;
+    }
+    .slider__description {
+        margin-bottom: 20px;
+    }
+    .menu__item {
+        display: none;
+    }
+    .menu__item--search,
+    .menu__item--cart {
+        display: block;
+    }
+    .services__list {
+        max-width: 600px;
+    }
+    .example__img {
+        width: 385px;
+        height: 241px;
+    }
+    .example__img--1,
+    .example__img--3 {
+        margin-top: 41px;
+        width: 385px;
+        height: 200px;
+    }
+    
+    .mobile__content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mobile__text {
+        width: 70%;
+        align-items: center;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+    .mobile__description {
+        text-align: center;
+    }
+    .mobile__img {
+        order: 2;
+    }
+    .mobile__list {
+        display: none;
+    }
+    .partners__content {
+        max-width: 580px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .copyright__content {
+        max-width: 600px;
+    }
+
+}
+@media only screen
+and (max-width : 980px) {
+    .footer__content {
+         justify-content: center;
+    }
+    .footer__block:last-child {
+            margin-top: 10px;
+    }
+    .slider__title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .slider__title--big {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .slider__description {
+        width: 70%;
+        align-self: center;
+    }
+    .example__img--1 {
+        left: -120px;
+    }
+    .example__img--3 {
+        right: -120px;
+    }
+} 
+@media only screen
+and (max-width : 680px) {
+    .example__img--1,
+    .example__img--3 {
+        display: none;
+    }
+} 
+ 
+/* iPhone 5 (портретный и альбомный режимы)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* Сюда добавляем стили*/
+}
+ 
+/* iPhone 5 (альбомный режим)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* Сюда добавляем стили*/
+}
+ 
+/* iPhone 5 (портретный режим)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* Сюда добавляем стили*/
+}
