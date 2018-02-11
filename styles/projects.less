@@ -50,6 +50,10 @@
             background-color:  #998675;
             color: #ffffff;
         }
+        &--active {
+            background-color:  #998675;
+            color: #ffffff;
+        }
     }
     &__cards {
         display: flex;
@@ -60,12 +64,17 @@
         margin-bottom: 10px;
     }
 }
-
 .card {
     margin-right: 30px;
     margin-bottom: 30px;
     background-color: #fbfaf8;
     cursor: pointer;
+    transition: 1s ease-out;
+    &--pasive {
+        transform: scale(.8);
+        opacity: .5;
+        pointer-events: none;
+    }
     &:hover {
         background-color:  #362f2d;    
     }
@@ -95,6 +104,8 @@
         background-color: #000;
     }
     &__img {
+        width: 100%;
+        height: 100%;
         position: absolute;
         transition: 1s ease-out;
         top: 0;

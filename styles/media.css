@@ -1,53 +1,10 @@
-/* Смартфоны (портретный и альбомный режимы) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Сюда добавляем стили*/
-}
- 
-/* Смартфоны (альбомный режим) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* Сюда добавляем стили*/
-}
- 
-/* Смартфоны (портретный режим) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* Сюда добавляем стили*/
-}
- 
-/* iPad (портретный и альбомный режимы) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-/* Сюда добавляем стили*/
-}
- 
-/* iPad (альбомный режим) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* Сюда добавляем стили*/
-}
- 
-/* iPad (портретный режим) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-/* Сюда добавляем стили*/
-}
- 
-/* Настольные компьютеры и ноутбуки ----------- */
 @media only screen
 and (max-width : 1280px) {
+    .header {
+        top: 20px;
+    }
     .header__content {
         max-width: 600px;
-    }
-    .slider__description {
-        margin-bottom: 20px;
     }
     .menu__item {
         display: none;
@@ -55,6 +12,20 @@ and (max-width : 1280px) {
     .menu__item--search,
     .menu__item--cart {
         display: block;
+    }
+    .cssSlider__description {
+        margin-bottom: 20px;
+        font-size: 12px;
+        width: 70%;
+        align-self: center;
+    }
+    .cssSlider__title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .cssSlider__title--big {
+        font-size: 34px;
+        margin-bottom: 10px;
     }
     .services__list {
         max-width: 600px;
@@ -89,6 +60,9 @@ and (max-width : 1280px) {
     .mobile__list {
         display: none;
     }
+    .carousel__content {
+        width: 800px;
+    }
     .partners__content {
         max-width: 580px;
         margin-top: 50px;
@@ -100,6 +74,15 @@ and (max-width : 1280px) {
 
 }
 @media only screen
+and (max-width : 1150px) {
+    .counter__content {
+        max-width: 690px;
+    }
+    .counter__item::after {
+        display: none;
+    }
+}
+@media only screen
 and (max-width : 980px) {
     .footer__content {
          justify-content: center;
@@ -107,24 +90,42 @@ and (max-width : 980px) {
     .footer__block:last-child {
             margin-top: 10px;
     }
-    .slider__title {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-    .slider__title--big {
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
-    .slider__description {
-        width: 70%;
-        align-self: center;
-    }
     .example__img--1 {
         left: -120px;
     }
     .example__img--3 {
         right: -120px;
     }
+}
+@media only screen
+and (max-width : 850px) {
+    .carousel__content {
+        width: 400px;
+    }
+    .boxes__content {
+        max-width: 600px;
+        justify-content: center;
+    }
+    .boxes__title {
+        text-align: center;
+    }
+    .boxes__description {
+        text-align: center;
+        margin-bottom: 20px;
+    } 
+    .boxes__btn {
+        margin-bottom: 50px;
+    }
+    .projects__list {
+        max-width: 500px;
+    }
+    .projects__cards {
+        max-width: 400px;
+        margin-right: 0;
+    }
+    .card {
+        margin-right: 0;
+    }  
 } 
 @media only screen
 and (max-width : 680px) {
@@ -132,27 +133,108 @@ and (max-width : 680px) {
     .example__img--3 {
         display: none;
     }
-} 
- 
-/* iPhone 5 (портретный и альбомный режимы)----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px) {
-/* Сюда добавляем стили*/
+    .example__description {
+        width: 95%;
+    }
+    .mobile__text {
+        width: 90%;
+    }
 }
- 
-/* iPhone 5 (альбомный режим)----------- */
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : landscape) {
-/* Сюда добавляем стили*/
+and (max-width : 620px) {
+    .cssSlider__text {
+        width: 100%;
+    }
+    .cssSlider__description {
+        margin-bottom: 10px;
+    }
+    .cssSlider__title {
+        font-size: 20px;
+    }
+    .cssSlider__title--big {
+        font-size: 28px;
+    }
+    .cssSlider__content {
+        width: calc(100%*3);
+        height: 100vh;
+        flex-direction: row;
+    }
+    .cssSlider__dot {
+        top: 95%;
+        right: 50%;
+    }
+    .cssSlider__dot--1 {
+        margin-top: 0;
+        margin-right: 20px;
+    }
+    .cssSlider__dot--2 {
+        margin-top: 0;
+    }
+    .cssSlider__dot--3 {
+        margin-top: 0;
+        margin-right: -20px;
+    }
+    #s1:checked ~ .cssSlider__content {
+        top: 0;
+        left: 0;
+    }
+    #s2:checked ~ .cssSlider__content {
+        top: 0;
+        left: -100%;
+    }
+    #s3:checked ~ .cssSlider__content {
+        top: 0;
+        left: -200%;
+    }
+    .projects__description {
+        width: 95%;
+    }
+    .presentation__description {
+        width: 95%;
+    }
+    .posts__description {
+        width: 95%;
+    }
+    .mobile__img {
+        width: 212px;
+        height: 308px;
+    }
 }
- 
-/* iPhone 5 (портретный режим)----------- */
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : portrait) {
-/* Сюда добавляем стили*/
+and (max-width : 440px) {
+    .cssSlider__description {
+        width: 90%;
+    }
+    .example__img {
+        width: 346px;
+        height: 217px;
+    }
 }
+@media only screen
+and (max-width : 400px) {
+    .card {
+        width: 330px;
+    }
+    .card__image {
+        width: 330px;
+    }
+    .carousel__content {
+        width: 330px;
+    }
+    .carousel__item {
+        width: 330px;
+        margin-right: 70px;
+        margin-left: 0;
+
+    }
+}
+@media only screen
+and (max-height : 400px) {
+    .presentation__btn {
+        margin-bottom: 20px;
+    }
+    .presentation__modal {
+        width: 90%;
+        height: 90%;
+    }
+}   

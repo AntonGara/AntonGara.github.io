@@ -26,7 +26,6 @@
     &__description {
         text-align: left;
         margin-bottom: 45px;
-        
     }
     &__list {
         list-style: none;
@@ -45,7 +44,9 @@
         line-height: 32px;
         text-align: left;
         display: flex;
+        align-items: center;
         position: relative;
+        margin-right: -35px;
         &::before {
             content: "";
             width: 21px;
@@ -53,9 +54,7 @@
             background-image: url('image/listItem-arrow.svg');
             background-size: cover;
             background-repeat: no-repeat;
-            position: absolute;
-            top: 0;
-            left: -50px;
+            margin-right: 35px;
         }
     }
 }

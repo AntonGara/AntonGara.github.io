@@ -1,124 +1,211 @@
 window.onload = function() {
-    var dots = document.querySelectorAll('.slider__dot');
-    var dot1 = document.querySelector ('.slider__dot--1');
-    var dot2 = document.querySelector ('.slider__dot--2');
-    var dot3 = document.querySelector ('.slider__dot--3');
-    var slides = document.querySelectorAll('.slider__item');
-    var item1 = document.querySelector ('.slider__item--1');
-    var item2 = document.querySelector ('.slider__item--2');
-    var item3 = document.querySelector ('.slider__item--3');
+    // Адаптивный CSS слайдер с анимацией текста
+    var dot1 = document.querySelector ('.cssSlider__dot--1');
+    var dot2 = document.querySelector ('.cssSlider__dot--2');
+    var dot3 = document.querySelector ('.cssSlider__dot--3');
+    var text1 = document.querySelector ('.cssSlider__text--1');
+    var text2 = document.querySelector ('.cssSlider__text--2');
+    var text3 = document.querySelector ('.cssSlider__text--3');
 
     dot1.onclick = function () {
-        for (var i = 0; i < dots.length; i++) { 
-            dots[i].classList.remove("slider__dot--active");
-            slides[i].classList.remove("slider__item--active");
-        }
-        dot1.classList.add("slider__dot--active");
-        item1.classList.add("slider__item--active");        
+        text1.classList.add("cssSlider__text--animated");
+        text1.addEventListener('animationend', function() {
+            text1.classList.remove("cssSlider__text--animated");
+        });      
     }
     dot2.onclick = function () {
-        for (var i = 0; i < dots.length; i++) { 
-            dots[i].classList.remove("slider__dot--active");
-            slides[i].classList.remove("slider__item--active");
-        }
-        dot2.classList.add("slider__dot--active");
-        item2.classList.add("slider__item--active");        
+        text2.classList.add("cssSlider__text--animated");
+        text2.addEventListener('animationend', function() {
+            text2.classList.remove("cssSlider__text--animated");
+        });      
     }
     dot3.onclick = function () {
-        for (var i = 0; i < dots.length; i++) { 
-            dots[i].classList.remove("slider__dot--active");
-            slides[i].classList.remove("slider__item--active");
-        }
-        dot3.classList.add("slider__dot--active");
-        item3.classList.add("slider__item--active");        
+        text3.classList.add("cssSlider__text--animated");
+        text3.addEventListener('animationend', function() {
+            text3.classList.remove("cssSlider__text--animated");
+        });      
     }
     
+    //Фильтр проектов
+    var allCard = document.querySelectorAll ('.card');
+    var filter1 = document.querySelectorAll ('.js-filter1');
+    var filter2 = document.querySelectorAll ('.js-filter2');
+    var filter3 = document.querySelectorAll ('.js-filter3');
+    var filter4 = document.querySelectorAll ('.js-filter4');
+    var allItem = document.querySelectorAll ('.projects__item');
+    var noneFilter = document.querySelector ('.projects__item');
+    var someFilter1 = document.querySelector ('.projects__item--1');
+    var someFilter2 = document.querySelector ('.projects__item--2');
+    var someFilter3 = document.querySelector ('.projects__item--3');
+    var someFilter4 = document.querySelector ('.projects__item--4');
+
+    noneFilter.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
+        noneFilter.classList.add("projects__item--active");
+    }
+    someFilter1.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
+        for (var i = 0; i < filter1.length; i++) {
+            filter1[i].classList.add("card--pasive");
+        }
+        someFilter1.classList.add("projects__item--active");
+    }
+    someFilter2.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
+        for (var i = 0; i < filter2.length; i++) {
+            filter2[i].classList.add("card--pasive");
+        }
+        someFilter2.classList.add("projects__item--active");
+    }
+    someFilter3.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
+        for (var i = 0; i < filter3.length; i++) {
+            filter3[i].classList.add("card--pasive");
+        }
+        someFilter3.classList.add("projects__item--active");
+    }
+    someFilter4.onclick = function () {
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
+        for (var i = 0; i < filter4.length; i++) {
+            filter4[i].classList.add("card--pasive");
+        }
+        someFilter4.classList.add("projects__item--active");
+    }
+
+
     //Счетчик
-    var number1 = document.querySelector('.counter__number--1'),
-        numberTop = number1.getBoundingClientRect().top,
-        start = +number1.innerHTML, end = +number1.dataset.max;
-
+    var startCounter = document.querySelector('.mobile__content');
+    var numberSourceTop = startCounter.getBoundingClientRect().top + window.pageYOffset;
+    var number1 = document.querySelector('.counter__number--1');
+    var number2 = document.querySelector('.counter__number--2');
+    var number3 = document.querySelector('.counter__number--3');
+    var number4 = document.querySelector('.counter__number--4');
+    var number5 = document.querySelector('.counter__number--5');
+    
     window.addEventListener('scroll', function onScroll() {
-            if(window.pageYOffset > numberTop - window.innerHeight / 2) {
-            this.removeEventListener('scroll', onScroll);
-
-            var interval = setInterval(function() {
-                    number1.innerHTML = ++start;
+        if(window.pageYOffset > numberSourceTop) {
+        this.removeEventListener('scroll', onScroll);
+            interval1 = setInterval(function() {
+                start = +number1.innerHTML;
+                end = +number1.dataset.max;
+                number1.innerHTML = ++start;
                 if(start == end) {
-                        clearInterval(interval);
+                        clearInterval(interval1);
                 }
-            }, 50);   
+            }, 10);
+            interval2 = setInterval(function() {
+                start = +number2.innerHTML;
+                end = +number2.dataset.max;
+                number2.innerHTML = ++start;
+                if(start == end) {
+                        clearInterval(interval2);
+                }
+            }, 25);
+            interval3 = setInterval(function() {
+                start = +number3.innerHTML;
+                end = +number3.dataset.max;
+                number3.innerHTML = ++start;
+                if(start == end) {
+                        clearInterval(interval3);
+                }
+            }, 50);
+            interval4 = setInterval(function() {
+                start = +number4.innerHTML;
+                end = +number4.dataset.max;
+                number4.innerHTML = ++start;
+                if(start == end) {
+                        clearInterval(interval4);
+                }
+            }, 100);
+            interval5 = setInterval(function() {
+                start = +number5.innerHTML;
+                end = +number5.dataset.max;
+                number5.innerHTML = ++start;
+                if(start == end) {
+                        clearInterval(interval5);
+                }
+            }, 200);         
         }
     });
 
-    var number2 = document.querySelector('.counter__number--2'),
-        numberTop2 = number2.getBoundingClientRect().top,
-        start2 = +number2.innerHTML, end2 = +number2.dataset.max;
+    
+    //Карусель
+    var track = document.querySelector ('.carousel__wrapper');
+    var trackItems = document.querySelectorAll ('.carousel__item');
+    var prev = document.querySelector ('.carousel__prev');
+    var next = document.querySelector ('.carousel__next');
+    var i = 0;
+    var itemWidth = 400; //ширина слайда с учетом отступов
+    
+    
+    next.onclick = function () {
+        i = i-itemWidth;
+        track.classList.add("carousel__wrapper--next");
+        prev.classList.add("carousel__prev--disabled");
+        next.classList.add("carousel__next--disabled");
 
-    window.addEventListener('scroll', function onScroll() {
-            if(window.pageYOffset > numberTop2 - window.innerHeight / 2) {
-            this.removeEventListener('scroll', onScroll);
-
-            var interval = setInterval(function() {
-                    number2.innerHTML = ++start2;
-                if(start2 == end2) {
-                        clearInterval(interval);
-                }
-            }, 50);   
-        }
-    });
-
-    //Карусель   
-    var items = document.querySelectorAll('.carousel__item');
-    var itemNext = document.querySelector ('.carousel__btn--next');
-    var itemPrev = document.querySelector ('.carousel__btn--prev');
-    var counter = -1;
-    var counter1 = 2;
-
-    itemNext.onclick = function () {
-        counter++;
-        if (counter+4 >= items.length) {
-            itemNext.classList.add("carousel__btn--next-disabled");
-        }; 
+        var content = document.querySelector ('.carousel__content');
+        var computedStyle = getComputedStyle(content);
+        var contentWidth = parseInt(computedStyle.width);
+        var slidesValue = trackItems.length - contentWidth/itemWidth;
         
-        items[counter].classList.add("carousel__item--active-pasive");
-        items[counter+3].classList.add("carousel__item--pasive-active");
-        itemNext.classList.add("carousel__btn--next-animated");
-        itemPrev.classList.add("carousel__btn--prev-disabled");    
-        
-            itemNext.addEventListener('animationend', function() {
-                for (var i = 0; i < items.length; i++) { 
-                    items[i].classList.remove("carousel__item--active-pasive");
-                    items[i].classList.remove("carousel__item--pasive-active");
-                }
-                items[counter].classList.add("carousel__item--pasive");
-                items[counter+3].classList.remove("carousel__item--pasive");     
-                itemNext.classList.remove("carousel__btn--next-animated");
-                itemPrev.classList.remove("carousel__btn--prev-disabled"); 
-         });
-    }
-    itemPrev.onclick = function () { 
-        
-        items[counter].classList.add("carousel__item--pasive-active");
-        items[counter+3].classList.add("carousel__item--active-pasive");
-        itemNext.classList.add("carousel__btn--next-disabled");
-        itemPrev.classList.add("carousel__btn--prev-animated");
-
-        counter--;
-
-        if (counter < 0) {
-            itemPrev.classList.add("carousel__btn--prev-disabled"); 
-        }
-        
-        itemPrev.addEventListener('animationend', function() {
-            for (var i = 0; i < items.length; i++) { 
-                items[i].classList.remove("carousel__item--active-pasive");
-                items[i].classList.remove("carousel__item--pasive-active");
+        track.addEventListener('animationend', function() {
+            track.classList.remove("carousel__wrapper--next");
+            track.style.left = i + "px";
+            prev.classList.remove("carousel__prev--disabled");
+            next.classList.remove("carousel__next--disabled");
+            if (i <= slidesValue*-itemWidth) {
+                next.classList.add("carousel__next--disabled");
             }
-            items[counter+1].classList.remove("carousel__item--pasive");
-            items[counter+4].classList.add("carousel__item--pasive");    
-            itemNext.classList.remove("carousel__btn--next-disabled");
-            itemPrev.classList.remove("carousel__btn--prev-animated"); 
-     });      
+        });
     }
+    prev.onclick = function () {
+        i = i+itemWidth;
+        track.classList.add("carousel__wrapper--prev");
+        prev.classList.add("carousel__prev--disabled");
+        next.classList.add("carousel__next--disabled");
+        track.addEventListener('animationend', function() {
+            track.classList.remove("carousel__wrapper--prev");
+            track.style.left = i + "px";
+            prev.classList.remove("carousel__prev--disabled");
+            next.classList.remove("carousel__next--disabled");
+            if (i >= 0) {
+                prev.classList.add("carousel__prev--disabled");
+            }
+        });    
+    }
+
+
+    //Видео в модальном окне
+    var video = document.getElementById('video');
+    var close = document.getElementById('close');
+    close.onclick = function () {
+        video.src = "https://www.youtube.com/embed/Rk6_hdRtJOE";
+    }
+    
 }
