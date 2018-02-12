@@ -30,6 +30,9 @@ and (max-width : 1280px) {
     .services__list {
         max-width: 600px;
     }
+    .projects__cards {
+        max-width: 800px;
+    }
     .example__img {
         width: 385px;
         height: 241px;
@@ -68,8 +71,14 @@ and (max-width : 1280px) {
         margin-top: 50px;
         margin-bottom: 50px;
     }
+    .partners__item:nth-child(2) {
+        margin-right: 0;
+    }
     .copyright__content {
         max-width: 600px;
+    }
+    .copyright__item:nth-child(2) {
+        margin-right: 0;
     }
 
 }
@@ -139,6 +148,14 @@ and (max-width : 680px) {
     .mobile__text {
         width: 90%;
     }
+    .partners__content {
+        max-width: 210px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .partners__item {
+        margin-right: 0;
+    }
 }
 @media only screen
 and (max-width : 620px) {
@@ -199,6 +216,12 @@ and (max-width : 620px) {
         width: 212px;
         height: 308px;
     }
+    .copyright__content {
+        max-width: 300px;
+    }
+    .copyright__item {
+        margin-right: 0;
+    }
 }
 @media only screen
 and (max-width : 440px) {
@@ -212,20 +235,21 @@ and (max-width : 440px) {
 }
 @media only screen
 and (max-width : 400px) {
-    .card {
-        width: 330px;
-    }
+    .card__content,
+    .card__text,
     .card__image {
         width: 330px;
+    }
+    .carousel__item {
+        width: 315px;
+        height: 335px;
+        margin-right: 85px;
     }
     .carousel__content {
         width: 330px;
     }
-    .carousel__item {
-        width: 330px;
-        margin-right: 70px;
-        margin-left: 0;
-
+    .carousel__wrapper {
+        justify-content: center;
     }
 }
 @media only screen

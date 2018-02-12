@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 body {
   margin: 0;
@@ -355,6 +356,7 @@ p {
   justify-content: center;
   flex-wrap: wrap;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 .projects__item {
@@ -397,7 +399,7 @@ p {
   margin-bottom: 30px;
   background-color: #fbfaf8;
   cursor: pointer;
-  transition: 1s ease-out;
+  transition: transform .5s, opacity .5s;
 }
 .card--pasive {
   transform: scale(0.8);
@@ -778,7 +780,7 @@ p {
 }
 .carousel__wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   position: absolute;
   top: 0;
   left: 0;
@@ -795,8 +797,6 @@ p {
   width: 370px;
   height: 395px;
   border: 1px solid #f8f8f8;
-  margin-right: 15px;
-  margin-left: 15px;
   overflow: hidden;
 }
 .carousel__item:hover {
@@ -869,7 +869,8 @@ p {
   text-align: center;
 }
 .carousel__text {
-  padding: 30px;
+  padding-left: 30px;
+  padding-top: 30px;
   overflow: hidden;
 }
 .carousel__title {
@@ -953,7 +954,6 @@ p {
   max-width: 1180px;
   margin-top: 100px;
   margin-bottom: 110px;
-  margin-right: -80px;
 }
 .partners__item {
   display: flex;
@@ -961,6 +961,9 @@ p {
   height: 210px;
   margin-right: 80px;
   margin-top: 30px;
+}
+.partners__item:last-child {
+  margin-right: 0;
 }
 .copyright {
   display: flex;
@@ -975,7 +978,6 @@ p {
   width: 100%;
   max-width: 1200px;
   margin: 80px 0;
-  margin-right: -30px;
 }
 .copyright__item {
   display: flex;
@@ -983,6 +985,9 @@ p {
   align-items: flex-start;
   width: 270px;
   margin-right: 30px;
+}
+.copyright__item:last-child {
+  margin-right: 0;
 }
 .copyright__description {
   color: #545454;
