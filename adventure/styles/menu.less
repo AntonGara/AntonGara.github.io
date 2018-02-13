@@ -1,0 +1,30 @@
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1260px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    &__item {
+        display: flex;
+        margin-right: 25px;
+        padding-bottom: 3px;
+        font-size: 12px;
+        font-family: "PTSans",sans-serif;
+        color: rgb(159, 162, 168);
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover {
+            color: rgb(36, 37, 38);
+            transition: color .15s;
+            cursor: pointer;
+        }
+        &-active {
+            color: rgb(36, 37, 38); 
+            font-size: 12px;
+            border-bottom: 2px solid rgb(36, 37, 38);
+            font-weight: bold;
+        }
+    }
+}

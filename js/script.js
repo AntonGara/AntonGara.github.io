@@ -174,7 +174,7 @@ window.onload = function() {
         var contentWidth = parseInt(computedStyle.width);
         var slidesValue = trackItems.length - contentWidth/itemWidth;
         
-        track.addEventListener('animationend', function() {
+        track.addEventListener('animationend', function trackNext() {
             track.classList.remove("carousel__wrapper--next");
             track.style.left = i + "px";
             prev.classList.remove("carousel__prev--disabled");
@@ -189,7 +189,7 @@ window.onload = function() {
         track.classList.add("carousel__wrapper--prev");
         prev.classList.add("carousel__prev--disabled");
         next.classList.add("carousel__next--disabled");
-        track.addEventListener('animationend', function() {
+        track.addEventListener('animationend', function trackPrev() {
             track.classList.remove("carousel__wrapper--prev");
             track.style.left = i + "px";
             prev.classList.remove("carousel__prev--disabled");
@@ -201,7 +201,7 @@ window.onload = function() {
     }
 
 
-    //Видео в модальном окне
+    //Видео в модальном окне (костыль)
     var video = document.getElementById('video');
     var close = document.getElementById('close');
     close.onclick = function () {

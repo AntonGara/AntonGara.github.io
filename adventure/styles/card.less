@@ -1,0 +1,44 @@
+.card {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: opacity .8s,transform .8s;
+  &--pasive {
+    transform: scale(0.8);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  &--big {
+    width: 620px;
+    height: 420px;
+  }
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    position: relative;
+    padding-top: 78px;
+    padding-left: 29px;
+    padding-bottom: 22px;
+    margin: 0;
+    text-align: left;
+    font-family: "NewBaskervilleC";
+    color: rgb(255, 255, 255);
+    font: 300 40px "New Baskerville C";
+  }
+  &__list {
+    padding: 0;
+    margin: 0 0 0 60px;
+  }
+  &__item {
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "NewBaskervilleC";
+    color: rgb(255, 255, 255);
+    font: 300 20px/17px "New Baskerville C";
+  }
+}

@@ -1,0 +1,96 @@
+
+@media only screen and (min-width: 1020px) and (max-width: 1280px) {
+    .menu,
+    .logo,
+    .content,
+    .footer-content {
+        max-width: 940px;
+    }
+    .content-block:first-child {
+        order: 1;
+    }
+    .content-block:last-child {
+      width: 300px;
+    }
+    .card--big {
+         width: 300px;
+         height: 200px;
+    }
+    .card--big h1 {
+        padding: 0;
+        line-height: 200px;
+        width: 300px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        font-size: 36px;
+        font-family: "NewBaskervilleC";
+        color: rgb(255, 255, 255);
+    }
+    .card--big ol {
+        display: none;
+    }
+    .modal {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media only screen and (min-width: 680px) and (max-width: 1020px) {
+    .menu,
+    .logo,
+    .content,
+    .footer-content {
+        max-width: 640px;
+    }
+    .modal {
+        width: 60%;
+        height: 50%;
+    } 
+}
+@media only screen and (min-width: 300px) and (max-width: 680px) {
+    .menu,
+    .logo,
+    .content,
+    .footer-content {
+        max-width: 300px;
+    }
+    .card--big {
+        width: 300px;
+        height: 200px;
+    }
+    .card--big h1 {
+        padding: 0;
+        line-height: 200px;
+        width: 300px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        font-size: 36px;
+        font-family: "NewBaskervilleC";
+        color: rgb(255, 255, 255);
+    }
+    .card--big ol {
+        display: none;
+    }
+    .content-block {
+        justify-content: center;
+    }
+    .footer-logo-text {
+        display: none;
+    }
+    .menu {
+        justify-content: center;
+    }
+    .menu__item {
+        margin-top: 10px;
+    }
+    .header,
+    .main {
+        margin-bottom: 20px;
+    }
+    .modal {
+        width: 80%;
+        height: 40%;
+    }
+}
