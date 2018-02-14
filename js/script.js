@@ -25,6 +25,18 @@ window.onload = function() {
             text3.classList.remove("cssSlider__text--animated");
         });      
     }
+
+    //Форма поиска
+    var header = document.querySelector ('.header__content');
+    var search = document.querySelector ('.menu__button--search');
+    var close = document.querySelector ('.header__close');
+
+    search.onclick = function () {
+        header.classList.add("header__content--pasive");
+    }
+    close.onclick = function () {
+        header.classList.remove("header__content--pasive");
+    }
     
     //Фильтр проектов
     var allCard = document.querySelectorAll ('.card');

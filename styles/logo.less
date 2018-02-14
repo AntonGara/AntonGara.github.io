@@ -2,14 +2,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &__img {
-        width: 64px;
-        height: 56px;
+    cursor: pointer;
+    &:hover &__title {
+        color: #c7b29a;
+    }
+    &:hover &__title::before {
+        background-image: url('image/logo-hover.svg');
     }
     &__title {
-        font-family: Raleway;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color:  #ffffff;
         font-size: 34px;
         font-weight: 400;
+        &::before {
+            content: "";
+            width: 64px;
+            height: 56px;
+            background-image: url('image/logo.svg');
+        }
     }
 }

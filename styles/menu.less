@@ -4,6 +4,15 @@
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    &__list {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
     &__item {
         margin-right: 29px;
         &--cart{
@@ -18,6 +27,24 @@
         }
         &:hover {
             color:  #c7b29a;
+        }
+    }
+    &__button {
+        width: 18px;
+        height: 24px;
+        &--cart {
+            background-image: url('image/icon-cart.svg');
+            margin-right: 29px;
+            &:hover {
+                background-image: url('image/icon-cart-hover.svg');
+            }
+        }
+        &--search {
+            width: 24px;
+            background-image: url('image/icon-search.svg');
+            &:hover {
+                background-image: url('image/icon-search-hover.svg');
+            }
         }
     }
 }

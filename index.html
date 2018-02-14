@@ -15,28 +15,27 @@
     <header class="header">
         <div class="header__content">
             <div class="logo">
-                <a href="#" class="logo__img">
-                    <img src="image/logos.svg" alt="logo">
-                </a>
                 <h2 class="logo__title">Waxom</h2>
             </div>
             <nav class="menu">
-                <a href="#" class="menu__item">Home</a>
-                <a href="#" class="menu__item">About Us</a>
-                <a href="#" class="menu__item">Portfolio</a>
-                <a href="#" class="menu__item">Services</a>
-                <a href="#" class="menu__item">Blog</a>
-                <a href="#" class="menu__item">Pricing</a>
-                <a href="#" class="menu__item">Shortcodes</a>
-                <a href="#" class="menu__item">Contact</a>
-                <a href="#" class="menu__item menu__item--cart">
-                    <img src="image/icon-cart.svg" alt="cart" class="menu__img">
-                </a>
-                <a href="#" class="menu__item menu__item--search">
-                    <img src="image/icon-search.svg" alt="search" class="menu__img">
-                </a>                       
+                <ul class="menu__list">
+                    <li class="menu__item">Home</li>
+                    <li class="menu__item">About</li>
+                    <li class="menu__item">Portfolio</li>
+                    <li class="menu__item">Services</li>
+                    <li class="menu__item">Blog</li>
+                    <li class="menu__item">Pricing</li>
+                    <li class="menu__item">Shortcodes</li>
+                    <li class="menu__item">Contact</li>
+                </ul>
+                <a href="#" class="menu__button menu__button--cart"></a>
+                <a href="#search" class="menu__button menu__button--search"></a>                      
             </nav>
-        </div>           
+        </div>
+        <div id="search" class="header__searchForm">
+            <input class="header__someSearch" type="text" value placeholder="hello world.." autofocus>
+            <a href="#" class="header__close"></a> 
+        </div>          
     </header>
     <section class="cssSlider">
             <input type="radio" name="slider" id="s1" checked>
@@ -415,8 +414,7 @@
         <div class="copyright__content">
             <div class="copyright__item">
                 <div class="logo">
-                    <a href="" class="logo__img"><img src="image/logos.svg" alt="logo"></a>
-                    <span class="logo__title">Waxom</span>
+                    <h2 class="logo__title">Waxom</h2>
                 </div>
                 <p class="copyright__description copyright__description--item1">Lorem ipsum dolor sit amet, 
                     consec&shy;tetur adipiscing elit. Etiam convallis tortor turpis,
