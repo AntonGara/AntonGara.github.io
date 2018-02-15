@@ -166,7 +166,7 @@ window.onload = function() {
     });
 
     
-    //Карусель
+    //Карусель (самописный слайдер)
     var track = document.querySelector ('.carousel__wrapper');
     var trackItems = document.querySelectorAll ('.carousel__item');
     var prev = document.querySelector ('.carousel__prev');
@@ -219,5 +219,24 @@ window.onload = function() {
     close.onclick = function () {
         video.src = "https://www.youtube.com/embed/Rk6_hdRtJOE";
     }
-    
+
+    //swiper слайдер
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        speed: 800,
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        loop: true,
+        breakpoints: {
+            1280: {
+              slidesPerView: 2,
+              slidesPerGroup: 2
+            },
+            620: {
+                slidesPerView: 1,
+                slidesPerGroup: 1
+            }
+        }
+    });
+
 }

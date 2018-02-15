@@ -64,6 +64,9 @@ and (max-width : 1280px) {
     .carousel__content {
         width: 800px;
     }
+    .swiper-container {
+        width: 590px;
+    }
     .partners__content {
         max-width: 580px;
         margin-top: 50px;
@@ -219,6 +222,9 @@ and (max-width : 620px) {
     }
     .copyright__item {
         margin-right: 0;
+    }
+    .swiper-container {
+        width: 300px;
     }
 }
 @media only screen
