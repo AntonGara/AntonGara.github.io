@@ -227,6 +227,7 @@ window.onload = function() {
         slidesPerView: 4,
         slidesPerGroup: 4,
         loop: true,
+        grabCursor: true,
         breakpoints: {
             1280: {
               slidesPerView: 2,
