@@ -172,12 +172,22 @@ window.onload = function() {
     }
 
 
-    //Видео в модальном окне (костыль)
-    var video = document.getElementById('video');
-    var close = document.getElementById('close');
-    close.onclick = function () {
-        video.src = "https://www.youtube.com/embed/Rk6_hdRtJOE";
-    }
+    //magnific-popup
+    $('.open-popup-image').magnificPopup({
+        type: 'image',
+        showCloseBtn: false,
+        autoFocusLast: false
+    });
+    
+    $('.popup-vimeo').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		removalDelay: 160,
+        preloader: false,
+        autoFocusLast: false,
+
+		fixedContentPos: false
+	});
 
     //swiper слайдер
     var mySwiper = new Swiper('.swiper-container', {
