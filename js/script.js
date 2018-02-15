@@ -39,77 +39,36 @@ window.onload = function() {
     }
     
     //Фильтр проектов
-    var allCard = document.querySelectorAll ('.card');
-    var filter1 = document.querySelectorAll ('.js-filter1');
-    var filter2 = document.querySelectorAll ('.js-filter2');
-    var filter3 = document.querySelectorAll ('.js-filter3');
-    var filter4 = document.querySelectorAll ('.js-filter4');
-    var allItem = document.querySelectorAll ('.projects__item');
-    var noneFilter = document.querySelector ('.projects__item');
-    var someFilter1 = document.querySelector ('.projects__item--1');
-    var someFilter2 = document.querySelector ('.projects__item--2');
-    var someFilter3 = document.querySelector ('.projects__item--3');
-    var someFilter4 = document.querySelector ('.projects__item--4');
+     
+    document.querySelector('.projects__list').addEventListener("click", function(evt){
+        var e = [].indexOf.call(this.children, evt.target);
+        var filter = document.querySelectorAll ('.js-filter' + e);
+        var allCard = document.querySelectorAll ('.card');
+        var allItem = document.querySelectorAll ('.projects__item');
 
-    noneFilter.onclick = function () {
-        for (var i = 0; i < allItem.length; i++) {
-            allItem[i].classList.remove("projects__item--active");
+        if (e <= 0) {
+            for (var i = 0; i < allItem.length; i++) {
+                allItem[i].classList.remove("projects__item--active");
+            }
+            for (var i = 0; i < allCard.length; i++) {
+                allCard[i].classList.remove("card--pasive");
+            }
+            allItem[e].classList.add("projects__item--active");
+        } else {
+            for (var i = 0; i < allItem.length; i++) {
+                allItem[i].classList.remove("projects__item--active");
+            }
+            for (var i = 0; i < allCard.length; i++) {
+                allCard[i].classList.remove("card--pasive");
+            }
+            for (var i = 0; i < filter.length; i++) {
+                filter[i].classList.add("card--pasive");
+            }
+            allItem[e].classList.add("projects__item--active");
         }
-        for (var i = 0; i < allCard.length; i++) {
-            allCard[i].classList.remove("card--pasive");
-        }
-        noneFilter.classList.add("projects__item--active");
-    }
-    someFilter1.onclick = function () {
-        for (var i = 0; i < allItem.length; i++) {
-            allItem[i].classList.remove("projects__item--active");
-        }
-        for (var i = 0; i < allCard.length; i++) {
-            allCard[i].classList.remove("card--pasive");
-        }
-        for (var i = 0; i < filter1.length; i++) {
-            filter1[i].classList.add("card--pasive");
-        }
-        someFilter1.classList.add("projects__item--active");
-    }
-    someFilter2.onclick = function () {
-        for (var i = 0; i < allItem.length; i++) {
-            allItem[i].classList.remove("projects__item--active");
-        }
-        for (var i = 0; i < allCard.length; i++) {
-            allCard[i].classList.remove("card--pasive");
-        }
-        for (var i = 0; i < filter2.length; i++) {
-            filter2[i].classList.add("card--pasive");
-        }
-        someFilter2.classList.add("projects__item--active");
-    }
-    someFilter3.onclick = function () {
-        for (var i = 0; i < allItem.length; i++) {
-            allItem[i].classList.remove("projects__item--active");
-        }
-        for (var i = 0; i < allCard.length; i++) {
-            allCard[i].classList.remove("card--pasive");
-        }
-        for (var i = 0; i < filter3.length; i++) {
-            filter3[i].classList.add("card--pasive");
-        }
-        someFilter3.classList.add("projects__item--active");
-    }
-    someFilter4.onclick = function () {
-        for (var i = 0; i < allItem.length; i++) {
-            allItem[i].classList.remove("projects__item--active");
-        }
-        for (var i = 0; i < allCard.length; i++) {
-            allCard[i].classList.remove("card--pasive");
-        }
-        for (var i = 0; i < filter4.length; i++) {
-            filter4[i].classList.add("card--pasive");
-        }
-        someFilter4.classList.add("projects__item--active");
-    }
+    });
 
-
+    
     //Счетчик
     var startCounter = document.querySelector('.mobile__content');
     var numberSourceTop = startCounter.getBoundingClientRect().top + window.pageYOffset;
