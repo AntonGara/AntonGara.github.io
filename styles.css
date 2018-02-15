@@ -1296,6 +1296,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: top 1s ease-in-out;
 }
 .cssSlider__item {
   width: 100%;
@@ -1377,7 +1378,6 @@ p {
 }
 #s1:checked ~ .cssSlider__content {
   top: 0;
-  transition: 1s ease-in-out;
 }
 #s1:checked ~ .cssSlider__dot--1 {
   border: 2px solid #d3c1ad;
@@ -1390,7 +1390,6 @@ p {
 }
 #s2:checked ~ .cssSlider__content {
   top: -100vh;
-  transition: 1s ease-in-out;
 }
 #s2:checked ~ .cssSlider__dot--2 {
   border: 2px solid #d3c1ad;
@@ -1403,7 +1402,6 @@ p {
 }
 #s3:checked ~ .cssSlider__content {
   top: -200vh;
-  transition: 1s ease-in-out;
 }
 #s3:checked ~ .cssSlider__dot--3 {
   border: 2px solid #d3c1ad;
