@@ -5,7 +5,8 @@
     flex-wrap: wrap;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    cursor: pointer;
+    position: relative;
+    cursor: pointer;  
     &__list {
         display: flex;
         justify-content: center;
@@ -15,36 +16,26 @@
     }
     &__item {
         margin-right: 29px;
-        &--cart{
-            width: 18px;
-            height: 24px;
-            margin-left: 32px;
-        }
-        &--search {
-            width: 24px;
-            height: 24px;
+        &:last-child {
             margin-right: 0;
         }
         &:hover {
-            color:  #c7b29a;
+            color: #c7b29a;
         }
     }
     &__button {
-        width: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
         height: 24px;
-        &--cart {
-            background-image: url('image/icon-cart.svg');
-            margin-right: 29px;
-            &:hover {
-                background-image: url('image/icon-cart-hover.svg');
-            }
+        color: #fff;
+        margin-left: 60px;
+        &:last-child {
+            margin-left: 25px;
         }
-        &--search {
-            width: 24px;
-            background-image: url('image/icon-search.svg');
-            &:hover {
-                background-image: url('image/icon-search-hover.svg');
-            }
+        &:hover {
+            color: #c7b29a;
         }
     }
 }

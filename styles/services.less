@@ -22,23 +22,12 @@
         margin-top: 20px;
         margin-bottom: 20px;
         cursor: pointer;
-        &:hover .services__title {
+        color: #555;
+        &:hover {
             color:  #c7b299;
         }
         &:hover .services__description::after {
             background-color: #c7b299;
-        }
-        &:hover .services__title--1::before {
-            background-image: url('image/icon-1-hover.svg');
-        }
-        &:hover .services__title--2::before {
-            background-image: url('image/icon-2-hover.svg');
-        }
-        &:hover .services__title--3::before {
-            background-image: url('image/icon-3-hover.svg');
-        }
-        &:hover .services__title--4::before {
-            background-image: url('image/icon-4-hover.svg');
         }
     }
     &__title {
@@ -46,43 +35,9 @@
         flex-direction: column;
         align-items: center;
         font-size: 22px;
-        padding-bottom: 20px;
-        &--1::before {
-            content: "";
-            width: 49px;
-            height: 49px;
-            background-image: url('image/icon-1.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-bottom: 30px;  
-        }
-        &--2::before {
-            content: "";
-            width: 49px;
-            height: 49px;
-            background-image: url('image/icon-2.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-bottom: 30px;  
-        }
-        &--3::before {
-            content: "";
-            width: 49px;
-            height: 49px;
-            background-image: url('image/icon-3.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-bottom: 30px;  
-        }
-        &--4::before {
-            content: "";
-            width: 49px;
-            height: 49px;
-            background-image: url('image/icon-4.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-bottom: 30px;  
-        }
+        margin-bottom: 20px;
+        margin-top: 30px;
+        color: currentColor;
     }
     &__description {
         display: flex;

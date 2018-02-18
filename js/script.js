@@ -1,43 +1,18 @@
 window.onload = function() {
-    // Адаптивный CSS слайдер с анимацией текста
-    var dot1 = document.querySelector ('.cssSlider__dot--1');
-    var dot2 = document.querySelector ('.cssSlider__dot--2');
-    var dot3 = document.querySelector ('.cssSlider__dot--3');
-    var text1 = document.querySelector ('.cssSlider__text--1');
-    var text2 = document.querySelector ('.cssSlider__text--2');
-    var text3 = document.querySelector ('.cssSlider__text--3');
-
-    dot1.onclick = function () {
-        text1.classList.add("cssSlider__text--animated");
-        text1.addEventListener('animationend', function() {
-            text1.classList.remove("cssSlider__text--animated");
-        });      
-    }
-    dot2.onclick = function () {
-        text2.classList.add("cssSlider__text--animated");
-        text2.addEventListener('animationend', function() {
-            text2.classList.remove("cssSlider__text--animated");
-        });      
-    }
-    dot3.onclick = function () {
-        text3.classList.add("cssSlider__text--animated");
-        text3.addEventListener('animationend', function() {
-            text3.classList.remove("cssSlider__text--animated");
-        });      
-    }
-
-    //Форма поиска
-    var header = document.querySelector ('.header__content');
-    var search = document.querySelector ('.menu__button--search');
-    var close = document.querySelector ('.header__close');
-
-    search.onclick = function () {
-        header.classList.add("header__content--pasive");
-    }
-    close.onclick = function () {
-        header.classList.remove("header__content--pasive");
-    }
-    
+    // //Гамбургер
+    // (function() {
+    //     var toggles = document.querySelectorAll(".hamburger");
+    //     for (var i = toggles.length - 1; i >= 0; i--) {
+    //       var toggle = toggles[i];
+    //       toggleHandler(toggle);
+    //     };
+    //     function toggleHandler(toggle) {
+    //       toggle.addEventListener( "click", function(e) {
+    //         e.preventDefault();
+    //         (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+    //       });
+    //     }
+    //   })();
     //Фильтр проектов
      
     document.querySelector('.projects__list').addEventListener("click", function(evt){
@@ -180,7 +155,6 @@ window.onload = function() {
     });
     
     $('.popup-vimeo').magnificPopup({
-		disableOn: 700,
 		type: 'iframe',
 		removalDelay: 160,
         preloader: false,

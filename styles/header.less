@@ -1,10 +1,20 @@
 .header {
     position: absolute;
-    top: 40px;
+    top: 0;
+    height: 96px;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     width: 100%;
     z-index: 999;
+    &:target {
+        .header__content {
+            animation: anim_out .5s forwards;
+        }
+        .header__searchForm {
+            display: flex;
+        }
+    }
     &__content {
         display: flex;
         justify-content: space-between;
@@ -14,13 +24,10 @@
         height: 56px;
         position: relative;
         animation: anim_in .5s forwards;
-        &--pasive {
-            animation: anim_out .5s forwards;
-        }
     }
     &__searchForm {
         position: absolute;
-        top: -40px;
+        top: 0;
         width: 100%;
         max-width: 1180px;
         height: 96px;
@@ -28,9 +35,6 @@
         justify-content: center;
         align-items: flex-end;
         animation: anim_form 1s ease-out;
-        &:target {
-            display: flex;
-        }
     }
     &__someSearch {
         width: 100%;

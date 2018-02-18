@@ -1,16 +1,22 @@
 @media only screen
 and (max-width : 1280px) {
-    .header {
-        top: 20px;
-    }
     .header__content {
         max-width: 600px;
     }
-    .menu__item {
+    .menu__list {
         display: none;
     }
-    .menu__item--search,
-    .menu__item--cart {
+    .header__content .logo {
+        order: 2;
+        flex-direction: column;
+    }
+    .header__content .logo .logo__title{
+        display: none;
+    }
+    .menu__button {
+        order: 2;
+    }
+    .hamburger {
         display: block;
     }
     .cssSlider__description {
@@ -160,51 +166,6 @@ and (max-width : 680px) {
 }
 @media only screen
 and (max-width : 620px) {
-    .cssSlider__text {
-        width: 100%;
-    }
-    .cssSlider__description {
-        margin-bottom: 10px;
-    }
-    .cssSlider__title {
-        font-size: 20px;
-    }
-    .cssSlider__title--big {
-        font-size: 28px;
-    }
-    .cssSlider__content {
-        width: calc(100%*3);
-        height: 100vh;
-        flex-direction: row;
-    }
-    .cssSlider__dot {
-        transform: scale(1.5);
-        top: 90%;
-        right: 50%;
-    }
-    .cssSlider__dot--1 {
-        margin-top: 0;
-        margin-right: 30px;
-    }
-    .cssSlider__dot--2 {
-        margin-top: 0;
-    }
-    .cssSlider__dot--3 {
-        margin-top: 0;
-        margin-right: -30px;
-    }
-    #s1:checked ~ .cssSlider__content {
-        top: 0;
-        left: 0;
-    }
-    #s2:checked ~ .cssSlider__content {
-        top: 0;
-        left: -100%;
-    }
-    #s3:checked ~ .cssSlider__content {
-        top: 0;
-        left: -200%;
-    }
     .projects__description {
         width: 95%;
     }
