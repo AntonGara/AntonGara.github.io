@@ -6,6 +6,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
     &__content {
         width: 100%;
         height: calc(100%*3);
@@ -17,6 +18,7 @@
         align-items: center;
         transition: top 1s ease-in-out, left 1s ease-in-out;
     }
+
     &__item {
         width: 100%;
         height: 100%;
@@ -27,28 +29,33 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     &__text {
         display: flex;
         flex-direction: column;
         width: 600px;
         margin-top: 40px;
     }
+
     &__title {
         font-size: 36px;
         font-weight: 500;
         color: #ffffff;
         margin-bottom: 14px;
+
         &--big {
             margin-bottom: 19px;
             font-size: 52px;
             font-weight: 700; 
         }
     }
+
     &__description {
         color:  #ffffff;
         line-height: 24px;
         margin-bottom: 50px; 
     }
+
     &__dots {
         width: 100%;
         max-width: 1200px;
@@ -57,8 +64,8 @@
         justify-content: center;
         align-items: flex-end;
         margin-right: 20px;
-        z-index: 99;
     }
+
     &__dot {
         background-color:  #ffffff;
         width: 15px;
@@ -67,9 +74,12 @@
         opacity: 0.6;
         transition: 1s ease-out;
         margin-bottom: 5px;
+        z-index: 99;
+
         &:last-child {
             margin-bottom: 0;
         }
+
         &:hover {
             border: 2px solid #d3c1ad;
             border-radius: 50%;
@@ -143,6 +153,25 @@
         }
     }  
 }
+@media only screen
+and (max-width : 620px) {
+    .cssSlider {
+        &__description {
+            margin-bottom: 20px;
+            font-size: 12px;
+            width: 70%;
+            align-self: center;
+        }
+        &__title {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        &__title--big {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+    }
+}
 
 @media only screen
 and (max-width : 620px) {
@@ -189,5 +218,11 @@ and (max-width : 620px) {
             top: 0;
             left: -200%;
         }
+    }
+}
+@media only screen
+and (max-width : 440px) {
+    .cssSlider__description {
+        width: 90%;
     }
 }
