@@ -38,12 +38,5 @@ document.querySelector('.menu').addEventListener("click", function(evt){
         fixedContentPos: false
     });
 
-//Видео в модальном окне (костыль)
-var video = document.getElementById('video');
-var close = document.getElementById('close');
-close.onclick = function () {
-    video.src = "https://www.youtube.com/embed/Rk6_hdRtJOE";
-}
-
 };
 
