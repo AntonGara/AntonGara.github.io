@@ -80,7 +80,7 @@ a {
   position: absolute;
   top: 50%;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: #fff;
   transform: rotate(45deg);
 }
@@ -89,9 +89,28 @@ a {
   position: absolute;
   top: 50%;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: #fff;
   transform: rotate(-45deg);
+}
+.header__buttons {
+  display: flex;
+  justify-content: center;
+}
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  margin-right: 30px;
+}
+.header__button:last-child {
+  margin-right: 0;
+}
+.header__button:hover {
+  color: #c7b29a;
 }
 @media only screen and (max-width: 1280px) {
   .header__content {
@@ -101,6 +120,12 @@ a {
     order: 2;
   }
   .header__content .logo .logo__title {
+    display: none;
+  }
+  .header__buttons {
+    order: 2;
+  }
+  .header__button:first-child {
     display: none;
   }
 }
@@ -148,20 +173,10 @@ a {
 .menu__item:hover {
   color: #c7b29a;
 }
-.menu__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  color: #fff;
-  margin-left: 60px;
-}
-.menu__button:last-child {
-  margin-left: 25px;
-}
-.menu__button:hover {
-  color: #c7b29a;
+@media only screen and (max-width: 1280px) {
+  .menu__list {
+    display: none;
+  }
 }
 h2 {
   margin: 0;
@@ -201,41 +216,41 @@ p {
 .button:hover {
   box-shadow: inset 0 -50px 0px rgba(0, 0, 0, 0.2);
 }
-.checkboxButton {
+.hamburger {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   background-color: transparent;
 }
-.hamburger {
+.hamburger__content {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: #fff;
   position: relative;
   transition: background 0s 0.3s;
   border-radius: 5px;
 }
-.hamburger::before {
+.hamburger__content::before {
   content: "";
   position: absolute;
   display: block;
-  top: -15px;
+  top: -9px;
   width: 100%;
-  height: 5px;
+  height: 3px;
   border-radius: 5px;
   background-color: #fff;
   transition-duration: 0.3s, 0.3s;
   transition-delay: 0.3s, 0s;
   transition-property: top, transform;
 }
-.hamburger::after {
+.hamburger__content::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: -15px;
-  height: 5px;
+  bottom: -9px;
+  height: 3px;
   width: 100%;
   border-radius: 5px;
   background-color: #fff;
@@ -243,36 +258,45 @@ p {
   transition-delay: 0.3s, 0s;
   transition-property: bottom, transform;
 }
-#hamburger:checked + .checkboxButton .hamburger {
+#hamburger:checked + .hamburger .hamburger__content {
   background: none;
 }
-#hamburger:checked + .checkboxButton .hamburger::before {
+#hamburger:checked + .hamburger .hamburger__content::before {
   top: 0;
   transform: rotate(45deg);
   transition-delay: 0s, 0.3s;
 }
-#hamburger:checked + .checkboxButton .hamburger::after {
+#hamburger:checked + .hamburger .hamburger__content::after {
   bottom: 0;
   transform: rotate(-45deg);
   transition-delay: 0s, 0.3s;
 }
 #hamburger:checked ~ .menu__list {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: absolute;
-  width: 600px;
-  top: 65px;
+  width: 280px;
+  top: 55px;
   left: 0;
 }
 #hamburger:checked ~ .menu__list .menu__item {
   margin-right: 0;
-  padding: 5px;
-  animation: anim_menu 0.3s ease-out;
+  margin-top: 3px;
+  padding: 10px;
+  background-color: #555;
+  transition: .3s;
+  animation: anim_in 0.3s ease-out;
+  border: 1px solid #fff;
 }
 #hamburger:checked ~ .menu__list .menu__item:hover {
   color: #555;
   background-color: #fff;
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 1280px) {
+  .hamburger {
+    display: flex;
+  }
 }
 @keyframes anim_text {
   0% {
@@ -296,16 +320,6 @@ p {
     opacity: 0;
   }
   100% {
-    opacity: 1;
-  }
-}
-@keyframes anim_menu {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -390,6 +404,11 @@ p {
   width: 70px;
   height: 3px;
   margin-top: 30px;
+}
+@media only screen and (max-width: 1280px) {
+  .services__list {
+    max-width: 600px;
+  }
 }
 .example {
   display: flex;
@@ -507,6 +526,22 @@ p {
   font-size: 18px;
   text-align: left;
   margin-bottom: 50px;
+}
+@media only screen and (max-width: 850px) {
+  .boxes__content {
+    max-width: 600px;
+    justify-content: center;
+  }
+  .boxes__title {
+    text-align: center;
+  }
+  .boxes__description {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .boxes__btn {
+    margin-bottom: 50px;
+  }
 }
 .projects {
   width: 100%;
@@ -853,6 +888,38 @@ p {
   background-repeat: no-repeat;
   margin-right: 35px;
 }
+@media only screen and (max-width: 1280px) {
+  .mobile__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile__text {
+    width: 70%;
+    align-items: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+  .mobile__description {
+    text-align: center;
+  }
+  .mobile__img {
+    order: 2;
+  }
+  .mobile__list {
+    display: none;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .mobile__text {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .mobile__img {
+    width: 212px;
+    height: 308px;
+  }
+}
 .counter {
   display: flex;
   justify-content: center;
@@ -947,6 +1014,14 @@ p {
   text-align: center;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 1150px) {
+  .counter__content {
+    max-width: 690px;
+  }
+  .counter__item::after {
+    display: none;
+  }
+}
 .posts {
   display: flex;
   justify-content: center;
@@ -965,6 +1040,11 @@ p {
 .posts__description {
   width: 60%;
   margin-bottom: 40px;
+}
+@media only screen and (max-width: 620px) {
+  .posts__description {
+    width: 95%;
+  }
 }
 .carousel {
   display: flex;
@@ -1127,7 +1207,6 @@ p {
 }
 .carousel__prev--disabled {
   pointer-events: none;
-  opacity: 0.5;
 }
 .carousel__next {
   width: 22px;
@@ -1141,7 +1220,29 @@ p {
 }
 .carousel__next--disabled {
   pointer-events: none;
-  opacity: 0.5;
+}
+@media only screen and (max-width: 1280px) {
+  .carousel__content {
+    width: 800px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .carousel__content {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carousel__item {
+    width: 315px;
+    height: 335px;
+    margin-right: 85px;
+  }
+  .carousel__content {
+    width: 330px;
+  }
+  .carousel__wrapper {
+    justify-content: center;
+  }
 }
 .swiper {
   display: flex;
@@ -1170,6 +1271,16 @@ p {
   align-items: center;
   width: 210px;
   height: 210px;
+}
+@media only screen and (max-width: 1280px) {
+  .swiper-container {
+    width: 590px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .swiper-container {
+    width: 300px;
+  }
 }
 .copyright {
   display: flex;
@@ -1300,6 +1411,22 @@ p {
   flex-wrap: wrap;
   margin-right: -10px;
 }
+@media only screen and (max-width: 1280px) {
+  .copyright__content {
+    max-width: 600px;
+  }
+  .copyright__item:nth-child(2) {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .copyright__content {
+    max-width: 300px;
+  }
+  .copyright__item {
+    margin-right: 0;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
@@ -1359,6 +1486,15 @@ p {
 }
 .footer__link--main:hover {
   color: #c7b299;
+}
+@media only screen and (max-width: 980px) {
+  .footer__content {
+    justify-content: center;
+    max-width: 600px;
+  }
+  .footer__block:last-child {
+    margin-top: 10px;
+  }
 }
 .cssSlider {
   display: flex;
@@ -1489,7 +1625,7 @@ p {
   height: 15px;
   opacity: 1;
 }
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 1280px) {
   .cssSlider__description {
     margin-bottom: 20px;
     font-size: 12px;

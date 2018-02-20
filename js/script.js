@@ -1,105 +1,43 @@
 window.onload = function() {
-    // //Гамбургер
-    // (function() {
-    //     var toggles = document.querySelectorAll(".hamburger");
-    //     for (var i = toggles.length - 1; i >= 0; i--) {
-    //       var toggle = toggles[i];
-    //       toggleHandler(toggle);
-    //     };
-    //     function toggleHandler(toggle) {
-    //       toggle.addEventListener( "click", function(e) {
-    //         e.preventDefault();
-    //         (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    //       });
-    //     }
-    //   })();
+    
     //Фильтр проектов
-     
     document.querySelector('.projects__list').addEventListener("click", function(evt){
         var e = [].indexOf.call(this.children, evt.target);
         var filter = document.querySelectorAll ('.js-filter' + e);
         var allCard = document.querySelectorAll ('.card');
         var allItem = document.querySelectorAll ('.projects__item');
+        if (!allItem[e] || allItem[e].classList.contains('projects__item--active')) return
+        
+        for (var i = 0; i < allItem.length; i++) {
+            allItem[i].classList.remove("projects__item--active");
+        }
+        for (var i = 0; i < allCard.length; i++) {
+            allCard[i].classList.remove("card--pasive");
+        }
 
-        if (e <= 0) {
-            for (var i = 0; i < allItem.length; i++) {
-                allItem[i].classList.remove("projects__item--active");
-            }
-            for (var i = 0; i < allCard.length; i++) {
-                allCard[i].classList.remove("card--pasive");
-            }
-            allItem[e].classList.add("projects__item--active");
-        } else {
-            for (var i = 0; i < allItem.length; i++) {
-                allItem[i].classList.remove("projects__item--active");
-            }
-            for (var i = 0; i < allCard.length; i++) {
-                allCard[i].classList.remove("card--pasive");
-            }
+        allItem[e].classList.add("projects__item--active");
+        
+        if (e > 0) {
             for (var i = 0; i < filter.length; i++) {
                 filter[i].classList.add("card--pasive");
-            }
-            allItem[e].classList.add("projects__item--active");
-        }
+            }  
+        } 
     });
 
     
     //Счетчик
-    var startCounter = document.querySelector('.mobile__content');
-    var numberSourceTop = startCounter.getBoundingClientRect().top + window.pageYOffset;
-    var number1 = document.querySelector('.counter__number--1');
-    var number2 = document.querySelector('.counter__number--2');
-    var number3 = document.querySelector('.counter__number--3');
-    var number4 = document.querySelector('.counter__number--4');
-    var number5 = document.querySelector('.counter__number--5');
-    
-    window.addEventListener('scroll', function onScroll() {
-        if(window.pageYOffset > numberSourceTop) {
-        this.removeEventListener('scroll', onScroll);
-            interval1 = setInterval(function() {
-                start = +number1.innerHTML;
-                end = +number1.dataset.max;
-                number1.innerHTML = ++start;
-                if(start == end) {
-                        clearInterval(interval1);
-                }
-            }, 10);
-            interval2 = setInterval(function() {
-                start = +number2.innerHTML;
-                end = +number2.dataset.max;
-                number2.innerHTML = ++start;
-                if(start == end) {
-                        clearInterval(interval2);
-                }
-            }, 25);
-            interval3 = setInterval(function() {
-                start = +number3.innerHTML;
-                end = +number3.dataset.max;
-                number3.innerHTML = ++start;
-                if(start == end) {
-                        clearInterval(interval3);
-                }
-            }, 50);
-            interval4 = setInterval(function() {
-                start = +number4.innerHTML;
-                end = +number4.dataset.max;
-                number4.innerHTML = ++start;
-                if(start == end) {
-                        clearInterval(interval4);
-                }
-            }, 100);
-            interval5 = setInterval(function() {
-                start = +number5.innerHTML;
-                end = +number5.dataset.max;
-                number5.innerHTML = ++start;
-                if(start == end) {
-                        clearInterval(interval5);
-                }
-            }, 200);         
-        }
-    });
+    var show = true;
+    var distance = 400; // расстояние в пикселях до секции(counter), на котором запускается счетчик
+      $(window).on("scroll", function(){
+          if(!show) return false;
+          var w_top = $(window).scrollTop();
+          var e_top = $('.counter').offset().top;
+          if (w_top + distance  >= e_top) {
+            $('.counter__number').countTo();
+            show = false;
+          }
+      });
 
-    
     //Карусель (самописный слайдер)
     var track = document.querySelector ('.carousel__wrapper');
     var trackItems = document.querySelectorAll ('.carousel__item');
@@ -159,7 +97,6 @@ window.onload = function() {
 		removalDelay: 160,
         preloader: false,
         autoFocusLast: false,
-
 		fixedContentPos: false
 	});
 

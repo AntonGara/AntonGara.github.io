@@ -156,8 +156,7 @@
             background-image: url('image/carousel_prev-hover.svg');
         }
         &--disabled {
-            pointer-events: none;
-            opacity: 0.5;
+            pointer-events: none;  
         }
     }
     &__next {
@@ -171,7 +170,33 @@
         }
         &--disabled {
             pointer-events: none;
-            opacity: 0.5;
         }
     }
 }
+
+@media only screen
+and (max-width : 1280px) {
+    .carousel__content {
+        width: 800px;
+    }
+}
+@media only screen
+and (max-width : 850px) {
+    .carousel__content {
+        width: 400px;
+    }
+}
+@media only screen
+and (max-width : 400px) {
+    .carousel__item {
+        width: 315px;
+        height: 335px;
+        margin-right: 85px;
+    }
+    .carousel__content {
+        width: 330px;
+    }
+    .carousel__wrapper {
+        justify-content: center;
+    }
+} 

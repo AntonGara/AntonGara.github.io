@@ -5,24 +5,39 @@
     width: 100%;
     background-image: url('image/partners_bg.png');
     background-size: cover;
+
+    &-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 1180px;
+        margin-top: 100px;
+        margin-bottom: 110px;
+        overflow: hidden;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 210px;
+        height: 210px;
+    }
 }
-.swiper-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 1180px;
-    margin-top: 100px;
-    margin-bottom: 110px;
-    overflow: hidden;
+@media only screen
+and (max-width : 1280px) {
+    .swiper-container {
+        width: 590px;
+    }
 }
-.swiper-wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 210px;
-    height: 210px;
+@media only screen
+and (max-width : 620px) {
+    .swiper-container {
+        width: 300px;
+    }
 }

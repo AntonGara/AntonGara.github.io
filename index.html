@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Roboto" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countTo.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/script.js" type="text/javascript"></script>
     <title>Portfolio Landing</title>
@@ -27,8 +27,8 @@
             </div>
             <nav id="menu" class="menu">
                 <input id="hamburger" type="checkbox" hidden>
-                <label for="hamburger" class="checkboxButton">
-                    <div class="hamburger"></div>
+                <label for="hamburger" class="hamburger">
+                    <div class="hamburger__content"></div>
                 </label>
                 <ul class="menu__list">
                     <li class="menu__item">Home</li>
@@ -41,18 +41,20 @@
                     <li class="menu__item">Contact</li>
                 </ul>                      
             </nav>
-            <!-- <a href="#!" class="menu__button">
+            <div class="header__buttons">
+                <a href="#!" class="header__button">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="18" height="24" viewBox="0 0 18 24">
                         <defs><style>.cls-2 {fill: currentColor;}</style></defs>
                         <path d="M14.995,2.999 C14.995,2.999 13.496,2.999 13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 C4.501,2.999 3.002,2.999 3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 C0.003,5.997 0.003,20.995 0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 C3.002,23.994 14.995,23.994 14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 C17.994,20.995 17.994,5.997 17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 C11.997,2.999 6.000,2.999 6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 C14.995,22.494 3.002,22.494 3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 C1.502,20.995 1.502,19.495 1.502,19.495 C1.502,19.495 16.495,19.495 16.495,19.495 C16.495,19.495 16.495,20.995 16.495,20.995 ZM16.495,17.995 C16.495,17.995 1.502,17.995 1.502,17.995 C1.502,17.995 1.502,5.997 1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 C3.002,4.497 4.501,4.497 4.501,4.497 C4.501,4.497 4.501,8.998 4.501,8.998 C4.501,8.998 6.000,8.998 6.000,8.998 C6.000,8.998 6.000,4.497 6.000,4.497 C6.000,4.497 11.997,4.497 11.997,4.497 C11.997,4.497 11.997,8.998 11.997,8.998 C11.997,8.998 13.496,8.998 13.496,8.998 C13.496,8.998 13.496,4.497 13.496,4.497 C13.496,4.497 14.995,4.497 14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 C16.495,5.997 16.495,17.995 16.495,17.995 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
                     </svg>           
-                </a> -->
-                <a href="#search" class="menu__button">
+                </a>
+                <a href="#search" class="header__button">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="24" height="24" viewBox="0 0 24 24">
                         <defs><style>.cls-2 {fill: currentColor;}</style></defs>
                         <path d="M23.762,22.681 C23.762,22.681 17.569,16.586 17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 C16.446,17.644 22.663,23.763 22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z" id="path-1" class="cls-2" fill-rule="evenodd"/>
                     </svg> 
-                </a> 
+                </a>
+            </div> 
         </div>
         <div class="header__searchForm">
             <input class="header__someSearch" type="text" value placeholder="hello world.." autofocus>
@@ -321,23 +323,23 @@
     <section class="counter">
         <div class="counter__content">
             <div class="counter__item counter__item--1">
-                <div class="counter__number counter__number--1" data-max="3587">3087</div>
+                <div class="counter__number counter__number--1" data-from="3087" data-to="3587" data-speed="5000">3087</div>
                 <h2 class="counter__title">saticfied clients</h2>
             </div>
             <div class="counter__item counter__item--2">
-                <div class="counter__number counter__number--2" data-max="207">7</div>
+                <div class="counter__number counter__number--2" data-from="7" data-to="207" data-speed="5000">7</div>
                 <h2 class="counter__title">cups of cofee</h2>
             </div>
             <div class="counter__item counter__item--3">
-                <div class="counter__number counter__number--3" data-max="2500">2400</div>
+                <div class="counter__number counter__number--3" data-from="2400" data-to="2500" data-speed="5000">2400</div>
                 <h2 class="counter__title">blog posts</h2>
             </div>
             <div class="counter__item counter__item--4">
-                <div class="counter__number counter__number--4" data-max="873">823</div>
+                <div class="counter__number counter__number--4" data-from="823" data-to="873" data-speed="5000">823</div>
                 <h2 class="counter__title">likes</h2>
             </div>
             <div class="counter__item counter__item--5">
-                <div class="counter__number counter__number--5" data-max="900">875</div>
+                <div class="counter__number counter__number--5" data-from="875" data-to="900" data-speed="5000">875</div>
                 <h2 class="counter__title">we launched</h2>
             </div>
         </div>
