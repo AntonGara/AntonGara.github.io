@@ -27,7 +27,7 @@ window.onload = function() {
     
     //Счетчик
     var show = true;
-    var distance = 400; // расстояние в пикселях до секции(counter), на котором запускается счетчик
+    var distance = 300; // расстояние на котором запускается счетчик(до секции в "px");
       $(window).on("scroll", function(){
           if(!show) return false;
           var w_top = $(window).scrollTop();
@@ -56,7 +56,7 @@ window.onload = function() {
         var content = document.querySelector ('.carousel__content');
         var computedStyle = getComputedStyle(content);
         var contentWidth = parseInt(computedStyle.width);
-        var slidesValue = trackItems.length - contentWidth/itemWidth;
+        var slidesValue = Math.round(trackItems.length - contentWidth/itemWidth);
         
         track.addEventListener('animationend', function trackNext() {
             track.classList.remove("carousel__wrapper--next");

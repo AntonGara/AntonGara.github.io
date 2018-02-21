@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  min-width: 360px;
 }
 a {
   text-decoration: none;
@@ -1492,8 +1493,20 @@ p {
     justify-content: center;
     max-width: 600px;
   }
-  .footer__block:last-child {
-    margin-top: 10px;
+  .footer__block:first-child {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footer__item:first-child {
+    padding: 0;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer__item--padding {
+    padding: 0;
   }
 }
 .cssSlider {

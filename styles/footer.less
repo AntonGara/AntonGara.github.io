@@ -64,7 +64,24 @@ and (max-width : 980px) {
          justify-content: center;
          max-width: 600px;
     }
-    .footer__block:last-child {
-            margin-top: 10px;
+    .footer__block:first-child {
+            margin-bottom: 10px;
+    }
+}
+@media only screen
+and (max-width : 500px) {
+    .footer {
+        &__item { 
+            &:first-child {
+                padding: 0;
+                border: none;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            &--padding {
+                padding: 0;
+            }
+        }
     }
 }
