@@ -136,6 +136,7 @@ a {
   align-items: center;
   cursor: pointer;
   color: #fff;
+  transition: .5s;
 }
 .logo:hover {
   color: #c7b29a;
@@ -759,6 +760,7 @@ p {
   width: 70px;
   height: 70px;
   color: #fff;
+  transition: .5s;
 }
 .presentation__link:hover {
   color: #c7b299;
@@ -1112,6 +1114,7 @@ p {
 .carousel__img {
   position: absolute;
   top: 0;
+  left: 0;
   transition: .5s;
 }
 .carousel__date {
@@ -1155,6 +1158,7 @@ p {
   text-align: center;
 }
 .carousel__text {
+  width: 370px;
   padding-left: 30px;
   padding-top: 30px;
   overflow: hidden;
@@ -1191,33 +1195,25 @@ p {
   height: 8px;
   margin-left: 9px;
 }
-.carousel__button {
+.carousel__buttons {
   display: flex;
   justify-content: center;
 }
-.carousel__prev {
+.carousel__button {
+  display: flex;
+  justify-content: center;
+  color: #d1d1d1;
   width: 22px;
   height: 22px;
-  margin-right: 8px;
-  background-image: url('image/carousel_prev.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-.carousel__prev:hover {
-  background-image: url('image/carousel_prev-hover.svg');
+.carousel__button:hover {
+  color: #c7b29a;
+}
+.carousel__prev {
+  margin-right: 8px;
 }
 .carousel__prev--disabled {
   pointer-events: none;
-}
-.carousel__next {
-  width: 22px;
-  height: 22px;
-  background-image: url('image/carousel_next.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.carousel__next:hover {
-  background-image: url('image/carousel_next-hover.svg');
 }
 .carousel__next--disabled {
   pointer-events: none;
@@ -1600,7 +1596,11 @@ p {
   top: 0;
 }
 #s1:checked ~ .cssSlider__content .cssSlider__text--1 {
-  animation: anim_text 2s ease-out;
+  animation: anim_text 2s ease-out forwards;
+}
+#s1:checked ~ .cssSlider__content .cssSlider__text--2,
+#s1:checked ~ .cssSlider__content .cssSlider__text--3 {
+  animation: anim_out 0.5s ease-out forwards;
 }
 #s1:checked ~ .cssSlider__dots .cssSlider__dot--1 {
   border: 2px solid #d3c1ad;
@@ -1614,7 +1614,11 @@ p {
   top: -100%;
 }
 #s2:checked ~ .cssSlider__content .cssSlider__text--2 {
-  animation: anim_text 2s ease-out;
+  animation: anim_text 2s ease-out forwards;
+}
+#s2:checked ~ .cssSlider__content .cssSlider__text--1,
+#s2:checked ~ .cssSlider__content .cssSlider__text--3 {
+  animation: anim_out 0.5s ease-out forwards;
 }
 #s2:checked ~ .cssSlider__dots .cssSlider__dot--2 {
   border: 2px solid #d3c1ad;
@@ -1628,7 +1632,11 @@ p {
   top: -200%;
 }
 #s3:checked ~ .cssSlider__content .cssSlider__text--3 {
-  animation: anim_text 2s ease-out;
+  animation: anim_text 2s ease-out forwards;
+}
+#s3:checked ~ .cssSlider__content .cssSlider__text--2,
+#s3:checked ~ .cssSlider__content .cssSlider__text--1 {
+  animation: anim_out 0.5s ease-out forwards;
 }
 #s3:checked ~ .cssSlider__dots .cssSlider__dot--3 {
   border: 2px solid #d3c1ad;

@@ -101,7 +101,11 @@
     & ~ .cssSlider__content {
     top: 0;
         & .cssSlider__text--1 {
-            animation: anim_text 2s ease-out;
+            animation: anim_text 2s ease-out forwards;
+        }
+        & .cssSlider__text--2,
+        & .cssSlider__text--3 {
+            animation: anim_out .5s ease-out forwards;
         }
     }
     & ~ .cssSlider__dots {
@@ -120,7 +124,11 @@
     & ~ .cssSlider__content {
     top: -100%;
         & .cssSlider__text--2 {
-            animation: anim_text 2s ease-out;
+            animation: anim_text 2s ease-out forwards;
+        }
+        & .cssSlider__text--1,
+        & .cssSlider__text--3 {
+            animation: anim_out .5s ease-out forwards;
         }
     }
     & ~ .cssSlider__dots {
@@ -139,7 +147,11 @@
     & ~ .cssSlider__content {
     top: -200%;
         & .cssSlider__text--3 {
-            animation: anim_text 2s ease-out;
+            animation: anim_text 2s ease-out forwards;
+        }
+        & .cssSlider__text--2,
+        & .cssSlider__text--1 {
+            animation: anim_out .5s ease-out forwards;
         }
     }
     & ~ .cssSlider__dots {
