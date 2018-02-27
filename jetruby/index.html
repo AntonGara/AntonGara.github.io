@@ -6,81 +6,123 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <script src="js/script.js" type="text/javascript"></script>
-    <title>Jetruby Task</title>
+    <title>JetRuby task</title>
 </head>
 <body>
-    <div class="button">
-        <button class="start">START</button>
-    </div>
-    <section class="board">
-        <div class="wrapper">
-            <div class="tiles" data-item="1">
-                <div class="back"></div>
-                <div class="front" style="background-color: green;"></div>
+    <div class="wrapper">
+        <div class="game">
+            <h1 class="game__title">Color Tiles</h1>
+            <div class="game__counter">
+                <span class="game__rounds">Rounds: 
+                    <span class="game__roundsValue">0</span>
+                </span>
             </div>
-            <div class="tiles" data-item="1">
-                <div class="back"></div>
-                <div class="front" style="background-color: green;"></div>
-            </div>
-            <div class="tiles" data-item="2">
-                <div class="back"></div>
-                <div class="front" style="background-color: blue;"></div>
-            </div>
-            <div class="tiles" data-item="2">
-                <div class="back"></div>
-                <div class="front" style="background-color: blue;"></div>
-            </div>
-            <div class="tiles" data-item="3">
-                <div class="back"></div>
-                <div class="front" style="background-color: orange;"></div>
-            </div>
-            <div class="tiles" data-item="3">
-                <div class="back"></div>
-                <div class="front" style="background-color: orange;"></div>
-            </div>
-            <div class="tiles" data-item="4">
-                <div class="back"></div>
-                <div class="front" style="background-color: yellow;"></div>
-            </div>
-            <div class="tiles" data-item="4">
-                <div class="back"></div>
-                <div class="front" style="background-color: yellow;"></div>
-            </div>
-            <div class="tiles" data-item="5">
-                <div class="back"></div>
-                <div class="front" style="background-color: red;"></div>
-            </div>
-            <div class="tiles" data-item="5">
-                <div class="back"></div>
-                <div class="front" style="background-color: red;"></div>
-            </div>
-            <div class="tiles" data-item="6">
-                <div class="back"></div>
-                <div class="front" style="background-color: grey;"></div>
-            </div>
-            <div class="tiles" data-item="6">
-                <div class="back"></div>
-                <div class="front" style="background-color: grey;"></div>
-            </div>
-            <div class="tiles" data-item="7">
-                <div class="back"></div>
-                <div class="front" style="background-color: black;"></div>
-            </div>
-            <div class="tiles" data-item="7">
-                <div class="back"></div>
-                <div class="front" style="background-color: black;"></div>
-            </div>
-            <div class="tiles" data-item="8">
-                <div class="back"></div>
-                <div class="front" style="background-color: violet;"></div>
-            </div>
-            <div class="tiles" data-item="8">
-                <div class="back"></div>
-                <div class="front" style="background-color: violet;"></div>
+            <div id="container" class="game__board">
+                <div class="tile game__tile" data-key="1">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #f34235"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="1">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #f34235"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="2">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #9b26af"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="2">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #9b26af"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="3">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #feea3a"></div>                        
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="3">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #feea3a"></div>                        
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="4">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #8ac249"></div>                        
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="4">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #8ac249"></div>                        
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="5">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #6639b6"></div>                        
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="5">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #6639b6"></div>  
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="6">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #2095f2"></div>  
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="6">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #2095f2"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="7">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #fe9700"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="7">
+                    <div class="tile__wrapper">
+                       <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #fe9700"></div> 
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="8">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #009587"></div>
+                    </div>
+                </div>
+                <div class="tile game__tile" data-key="8">
+                    <div class="tile__wrapper">
+                        <div class="tile__side tile__side--front"></div>
+                        <div class="tile__side tile__side--back" style="background-color: #009587"></div>       
+                    </div>
+                </div>
+                <div class="game__winScreen">
+                    <h2 class="game__winTitle" >You win!</h2>
+                    <span class="game__winDescription">You finished the game in <span class="game__winRounds">0</span> rounds!</span>
+                    <div class="game__restartBtn">Play again!</div>
+                </div>
             </div>
         </div>
-    </section>
-    
+    </div> 
 </body>
 </html>

@@ -1,87 +1,120 @@
-.button {
+.game {
+  font-family: 'Nanum Brush Script', cursive;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.start {
-  width: 100px;
-  height: 20px;
-  margin-top: 20px;
-}
-.start.is-active {
-  animation: btn 5s ease-in-out;
-  pointer-events: none;
-}
-.board {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 100wp;
   height: 100vh;
-  transition: 1s;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.board.is-disabled {
+.game__title {
+  margin: 0;
+  font-size: 60px;
+}
+.game__rounds {
+  font-size: 40px;
+}
+.game__board {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  border: 5px solid #000;
+  border-radius: 10px;
+}
+.game__board.is-disabled {
   pointer-events: none;
 }
-.wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 90%;
-  height: 90%;
+.game__roundsValue.is-active {
+  animation: counter 0.4s ease-in-out;
 }
-.tiles {
-  width: 20%;
-  margin: 5px;
-  border: 1px solid black;
-  transition: .3s;
-  transform: rotateX(180deg);
-}
-.tiles.is-active {
-  transform: rotateX(0);
-}
-.tiles.is-find {
-  transform: rotateX(0);
-}
-.tiles.show {
-  animation: show 5s ease-in;
-}
-.front {
+.game__winScreen {
   position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s ease-in;
+  transform: scale(0);
 }
-.back {
+.game__winScreen.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.game__winTitle {
+  font-size: 40px;
+  margin-top: 0;
+}
+.game__winDescription {
+  font-size: 30px;
+}
+.game__restartBtn {
+  margin-top: 20px;
+  font-size: 30px;
+  line-height: 25px;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+.game__restartBtn:hover {
+  background-color: black;
+  color: #fff;
+}
+.tile {
   position: relative;
-  background-color: none;
+  box-sizing: border-box;
+  width: 118px;
+  height: 118px;
+  border-radius: 8px;
+  perspective: 800px;
+  transform: scale3d(1, 1, 1);
+  transition: 0.5s ease-out;
+}
+.tile__wrapper {
+  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 99;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid;
+  transform-style: preserve-3d;
+  transition: .4s;
 }
-@keyframes show_tiles {
-  100% {
-    transform: rotateX(0);
-  }
+.tile__side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  text-align: center;
+  backface-visibility: hidden;
 }
-@keyframes show {
-  20% {
-    transform: rotateX(0);
-  }
-  80% {
-    transform: rotateX(0);
-  }
-  100% {
-    transform: rotateX(180deg);
-  }
+.tile__side--front::after {
+  content: "?";
+  line-height: 118px;
+  font-size: 70px;
+  color: #000;
 }
-@keyframes btn {
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
+.tile__side--back {
+  transform: rotateY(180deg);
+}
+.tile.is-find .tile__wrapper {
+  transform: rotateY(180deg);
+}
+.tile.is-active .tile__wrapper {
+  transform: rotateY(180deg);
+}
+.tile.is-hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in;
+}
+@keyframes counter {
+  0% {
+    opacity: 0;
   }
 }
