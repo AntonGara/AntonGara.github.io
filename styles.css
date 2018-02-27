@@ -1106,56 +1106,56 @@ p {
   transform: scale(1.1);
 }
 .carousel__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 220px;
   overflow: hidden;
 }
 .carousel__img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
   transition: .5s;
+  width: 100%;
+  height: 100%;
 }
 .carousel__date {
-  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 20px;
-  margin-top: 20px;
 }
-.carousel__day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background-color: #363636;
-  width: 50px;
-  height: 35px;
-  font-family: Montserrat;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 20px;
-  text-align: center;
-}
+.carousel__day,
 .carousel__month {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
+  width: 50px;
+  line-height: 20px;
+  text-align: center;
+}
+.carousel__day {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #363636;
+  height: 35px;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 300;
+}
+.carousel__month {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   background-color: #252525;
-  width: 50px;
   height: 25px;
   font-family: Roboto;
-  color: #ffffff;
   font-size: 12px;
   font-weight: 400;
-  line-height: 20px;
-  text-align: center;
 }
 .carousel__text {
   width: 370px;
@@ -1231,8 +1231,14 @@ p {
 @media only screen and (max-width: 400px) {
   .carousel__item {
     width: 315px;
-    height: 335px;
+    height: 355px;
     margin-right: 85px;
+  }
+  .carousel__text {
+    width: 315px;
+  }
+  .carousel__image {
+    height: 185px;
   }
   .carousel__content {
     width: 330px;
