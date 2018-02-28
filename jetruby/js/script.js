@@ -9,17 +9,14 @@ window.onload = function() {
         var rounds = 0 //счетчик раундов
         var match = 0 //счетчик совпадений (для победы 8)
         var activeTiles = []
+        var getRandom = function (min, max) {
+            return Math.random() * (max - min) + min;
+        }
         for (var i =0 ; i < allTiles.length; i++) {
-            function getRandom(min, max) {
-                return Math.random() * (max - min) + min;
-            }
             allTiles[i].style.order= Math.round(getRandom(1,10));
         }
         restart.addEventListener('click', function () {
             for (var i =0 ; i < allTiles.length; i++) {
-                function getRandom(min, max) {
-                    return Math.random() * (max - min) + min;
-                }
                 allTiles[i].style.order= Math.round(getRandom(1,10));
                 allTiles[i].classList.remove('is-find');
                 allTiles[i].classList.remove('is-hide');
