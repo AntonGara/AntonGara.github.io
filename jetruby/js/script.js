@@ -5,9 +5,9 @@ window.onload = function() {
         var winScreen = document.querySelector('.game__winScreen')
         var restart = document.querySelector('.game__restartBtn')
         var winRound = document.querySelector('.game__winRounds')
-        var index = 0
-        var rounds = 0
-        var rating = 0
+        var index = 0 //счетчик действий в каждой итерации
+        var rounds = 0 //счетчик раундов
+        var match = 0 //счетчик совпадений (для победы 8)
         var activeTiles = []
         for (var i =0 ; i < allTiles.length; i++) {
             function getRandom(min, max) {
@@ -24,7 +24,7 @@ window.onload = function() {
                 allTiles[i].classList.remove('is-find');
                 allTiles[i].classList.remove('is-hide');
                 winScreen.classList.remove('is-active')
-                rating=0
+                match=0
                 index=0
                 rounds=0
             }
@@ -50,13 +50,13 @@ window.onload = function() {
                     if (activeTiles[0].dataset.key == activeTiles[1].dataset.key) {
                         activeTiles[0].classList.add('is-find')
                         activeTiles[1].classList.add('is-find')
-                        rating++
+                        match++
                     }
                     activeTiles[0].classList.remove('is-active')
                     activeTiles[1].classList.remove('is-active')
                     index=0
                     activeTiles = []
-                    if (rating>=8) {
+                    if (match>=8) {
                         for (var i = 0; i < allTiles.length; i++) {
                             allTiles[i].classList.add('is-hide')
                         }

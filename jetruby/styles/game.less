@@ -10,9 +10,6 @@
         margin: 0;
         font-size: 60px;
     }
-    &__rounds {
-        font-size: 40px;
-    }
     &__board {
         display: flex;
         justify-content: space-around;
@@ -26,7 +23,18 @@
             pointer-events: none;
         }
     }
+    &__counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__rounds {
+        font-size: 40px;
+    }
     &__roundsValue {
+        font-size: 40px;
+        width: 25px;
+        margin-left: 5px;
         &.is-active {
             animation: counter .4s ease-in-out;
         }

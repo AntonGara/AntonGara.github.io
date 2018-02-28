@@ -11,9 +11,6 @@
   margin: 0;
   font-size: 60px;
 }
-.game__rounds {
-  font-size: 40px;
-}
 .game__board {
   display: flex;
   justify-content: space-around;
@@ -26,6 +23,19 @@
 }
 .game__board.is-disabled {
   pointer-events: none;
+}
+.game__counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game__rounds {
+  font-size: 40px;
+}
+.game__roundsValue {
+  font-size: 40px;
+  width: 25px;
+  margin-left: 5px;
 }
 .game__roundsValue.is-active {
   animation: counter 0.4s ease-in-out;
@@ -71,8 +81,7 @@
   width: 118px;
   height: 118px;
   border-radius: 8px;
-  perspective: 800px;
-  transform: scale3d(1, 1, 1);
+  perspective: 600px;
   transition: 0.5s ease-out;
 }
 .tile__wrapper {
