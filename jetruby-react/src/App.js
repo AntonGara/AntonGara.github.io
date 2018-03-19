@@ -38,15 +38,14 @@ class App extends Component {
     onTransitionEnd = () => {
         this.setState({ readyToOpenNextTile: !this.state.readyToOpenNextTile })
         if (this.state.activeTiles.length >= 2) {
-            this.state.activeTiles[0].classList.remove('is-open')
-            this.state.activeTiles[1].classList.remove('is-open')
-            this.setState ({ rounds: this.state.rounds + 1 })
             if (this.state.activeTiles[0].firstChild.style.backgroundColor === this.state.activeTiles[1].firstChild.style.backgroundColor) {
                 this.state.activeTiles[0].classList.add('is-find')
                 this.state.activeTiles[1].classList.add('is-find')
                 this.setState({ matches: this.state.matches + 1 })
             } 
-            this.setState({ activeTiles: [] })
+            this.state.activeTiles[0].classList.remove('is-open')
+            this.state.activeTiles[1].classList.remove('is-open')
+            this.setState ({ rounds: this.state.rounds + 1, activeTiles: [] })
         }
     }
 
@@ -72,7 +71,7 @@ class App extends Component {
                     onClick={this.openTile} 
                     onTransitionEnd={this.onTransitionEnd} 
                     pointerEvents={this.state.readyToOpenNextTile ? 'auto' : 'none'}
-                    content={ this.state.matches >= 8 ? <WinScreen winRound={this.state.rounds} onClick={this.restart}/> : this.state.tiles }
+                    content={ this.state.matches === 8 ? <WinScreen winRound={this.state.rounds} onClick={this.restart}/> : this.state.tiles }
                 />
             </div>
         );
